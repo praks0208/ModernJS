@@ -1,401 +1,100 @@
-TYPE CONVERSION:-
-// Type Conversion
-let score = '100';
+// DOCUMENT OBJECT MODEL
+
+// Query Selector
+// const para = document.querySelector('p');
+// const para = document.querySelector('div.error');
+// console.log(para);
+
+// const paras = document.querySelectorAll('p');
+// // console.log(paras);
+// // console.log(paras[0]);
+// paras.forEach(para=>{
+//     console.log(para)
+// });
+
+// const errors = document.querySelectorAll('.error');
+// console.log(errors);
+
+// Get an element by ID
+// const title = document.getElementById('page-title');
+// console.log(title);
+
+// // Get elements by their Class name
+// const errors = document.getElementsByClassName('error');
+// console.log(errors);
+// console.log(errors[0]);
+
+// // Get elements by their Tag name
+// const paras = document.getElementsByTagName('p');
+// console.log(paras);
+// console.log(paras[1]);
+
+// InnerText property
+// const para = document.querySelector('p');
+
+// console.log(para.innerText);
+// Change text of element
+// para.innerText ='ninjas are awesome!';
+// para.innerText +='ninjas are awesome!';
+
+// Change text of multiple elements
+// const paras = document.querySelectorAll('p');
+// paras.forEach(para=>{
+//     console.log(para.innerText);
+//     para.innerText+= ' new text';
+// })
+
+// innerHTML property
+// const content = document.querySelector('.content');
+// console.log(content.innerHTML);
+// content.innerHTML = `<h2>This is a new H2 </h2>`;
+// content.innerHTML += `<h2>This is a new H2 </h2>`;
+
+// const people = ['mario','luigi','yoshi'];
+// people.forEach(person=>{
+//     content.innerHTML += `<p>${person}</p>`;
+// })
+
+// // Change Attribute of Elements
+// const link = document.querySelector('a');
+// console.log(link.getAttribute('href'));
+// link.setAttribute('href','https://www.amazon.com');
+// link.innerText = 'The Amazon Website'
+
+// const msg = document.querySelector('p');
+// console.log(msg.getAttribute('class'));
+// msg.setAttribute('class','success');
+// console.log(msg.getAttribute('class'));
+// msg.setAttribute('style','color:green;');
+
+// Setting style properties to element
+// const title = document.querySelector('h1');
+// // title.setAttribute('style','margin:50px;')
+// console.log(title.style);
+// console.log(title.style.color);
+// title.style.margin = '50px';
+// title.style.color = 'crimson';
+// title.style.fontSize = '60px';
+// title.style.margin = ''; //to remove style
 
 
-score = Number(score);
-console.log(score + 1);
-console.log(typeof score);
+// Change class of element
+// const content = document.querySelector('p');
+// console.log(content.classList);
+// content.classList.add('error');
+// content.classList.remove('error');
+// content.classList.add('success');
 
-
-// let result = Number('hello');
-// let result = String(50);
-// let result = Boolean(0);
-let result = Boolean('');
-console.log(result, typeof result);
-
-FOR LOOPS:-
-// For Loops
-// for(let i=0; i<5;i++){
-// console.log("in loop:", i);
-// }
-// console.log("loop finished");
-
-
-const names = ['shaun', 'mario', 'luigi'];
-for(let i=0; i<names.length; i++){
-    // console.log( names[i]);
-    let html = `<div>${names[i]}</div>`; //Template Literal
-    console.log(html);
-
-
+const paras = document.querySelectorAll('p');
+paras.forEach(p=>{
+if(p.textContent.includes('error')){
+    p.classList.add('error');
 }
-
-While & Do While Loop:-
-// While Loop
-// const names = ['shaun', 'mario', 'luigi'];
-
-
-// let i=0;
-// while(i < 5){
-//     console.log('in loop',i);
-//    i++;
-// }
-
-
-let i=0;
-while(i < names.length){
-    console.log(names[i]);
-    i++;
+if(p.innerText.includes('success')){
+    p.classList.add('success');
 }
-
-
-// Do While Loop
-let i=3;
-do{
-    console.log('val of i is',i)
-    i++;
-}while(i<5);
-
-
-
-If Else Statements
-// If Else Statements
-// const age = 25;
-
-
-// if(age > 20){
-//     console.log("you are over 20 years old")
-// }
-
-
-// const ninjas = ['shaun', 'ryu', 'chun-li','yoshi'];
-
-
-// if(ninjas.length >3){
-//     console.log("that's a lot of ninjas");
-// }
-
-
-const password = 'password';
-if(password.length>=12){
-    console.log('that password is mighty strong');
-}
-else if(password.length >=8){
-    console.log('that password is long enough');
-}else{
-    console.log('password is not long enough');
-}
-
-// Logical Operators && and ||
-
-
-const password = 'p@ssw1';
-
-
-if(password.length>=12 && password.includes('@')){
-    console.log('that password is mighty strong');
-}
-else if(password.length >=8 || password.includes('@') && password.length>5){
-    console.log('that password is strong enough');
-}else{
-    console.log('password is not strong enough');
-}
-
-Logical NOT (!)
-// Logical NOT (!)
-let user = false;
-
-
-if(!user){
-    console.log('you must be logged in to continue');
-}
-else{
-    console.log('login in to continue')
-}
-
-
-console.log(!true);
-console.log(false);
-
-Break and Continue
-// Break and Continue
-
-
-const scores = [50, 20, 0, 30, 100, 20, 10];
-
-
-for(let i=0; i < scores.length; i++){
-    if(scores[i]===0){
-        continue;
-    }
-    console.log('your score:',scores[i]);
-    if(scores[i]===100){
-        console.log('congrats, you got the top score!');
-        break;
-    }
-}
-Switch Statements
-// Switch Statements
-
-
-const grade = 'B';
-
-
-switch (grade) {
-    case 'A':
-        console.log('you got an A!');
-        break;
-    case 'B':
-        console.log('you got a B!');
-        break;
-    case 'C':
-        console.log('you got a C!');
-        break;
-    case 'D':
-        console.log('you got an D!');
-        break;
-    case 'E':
-        console.log('you got an E!');
-        break;
-    default:
-        console.log('not a valid grade');
-        break;
-}
-
-
-
-Variables & Block Scope
-// Variables & Block Scope
-
-
-const age = 30;
-
-
-if(true){
-    const age = 40;
-    const name = 'shaun';
-    console.log('inside 1st code block:',age,name)
-
-
-    if(true){
-        const age = 50;
-        console.log('inside 2nd code block:',age);
-    }
-}
-
-
-console.log('outside code block:',age,name);
-
-
-
-
-
-
-Functions:
-// Function Declaration
-function greet(){
-    console.log('hello there');
-}
-
-
-// Function Expression
-const speak = function(name = 'Luigi',time='Night'){
-    console.log(`Good ${time} ${name}`);
-};
-
-
-speak();
-speak('Prasanna');
-speak('Prasanna','Day');
-
-
-// Returning Values
-const calcArea = function(radius){
-    return 3.14 * radius**2;
-};
-
-
-const area = calcArea(5);
-console.log(area);
-
-
-const calcVol = function(area){
-
-
-};
-
-
-calcVol(area);
-
-
-// Practice Arrow Functions
-const greet = () => 'hello world';
-const result = greet();
-console.log(result);
-
-
-const bill = (products, tax) =>{
-    let total = 0;
-    for (let i=0; i<products.length; i++){
-        total += products[i] + products[i]*tax;
-    }
-    return total;
-}
-
-
-console.log('Total Bill is: ',bill([10,15,30],0.2));
-
-
-//Functions & Methods
-const names = 'prasanna';
-
-
-// Function
-const greet = ()=> 'hello';
-
-
-let resultOne = greet();
-console.log(resultOne);
-
-
-// Methods
-let resultTwo = names.toUpperCase();
-console.log(resultTwo);
-
-
-// Callbacks & Foreach
-const myFunc = (callbackFunc) => {
-    let value = 50;
-    callbackFunc(value);
-}
-
-
-myFunc(value =>{
-    console.log(value);
 });
 
-
-// Callback Function with ForEach
-let people = ['maria', 'luigi', 'ryu', 'shaun', 'chun-li'];
-
-
-const logPerson = (person, index) => {
-    console.log(`${index} - hello ${person}`)
-}
-
-
-people.forEach(logPerson);
-
-
-// Get a Reference to the 'ul'
-const ul = document.querySelector('.people');
-
-
-const people = ['maria', 'luigi', 'ryu', 'shaun', 'chun-li'];
-let html =``;
-people.forEach(person=>{
-// html template
-html += `<li style="color:purple;">${person}</li>`;
-});
-
-
-console.log(html);
-ul.innerHTML = html;
-
-
-
-OBJECTS:
-// Object Literal
-
-
-let user = {
-    name:'crystal',
-    age:30,
-    email:'crystal@gmail.com',
-    location:'berlin',
-    blogs: ['why mac & cheese rules','10 things to make with marmite']
-};
-
-
-console.log(user);
-console.log(user.name);
-
-
-// user.age = 35;
-console.log(user.age);
-
-
-console.log(user['name']); //square bracket notation
-user['name'] = 'chun-li';
-console.log(user['name']);
-
-
-console.log(typeof(user));
-// Oject within an object
-let user = {
-    name:'crystal',
-    age:30,
-    email:'crystal@gmail.com',
-    location:'berlin',
-    blogs: [
-        {title: 'why mac & cheese rules', likes:30},
-        {title: '10 things to make with marmite', likes:50}
-    ],
-    login(){
-        console.log('the user logged in');
-    },
-    logout(){
-        console.log('the user logged out');
-    },
-    logBlogs(){
-        // console.log(this.blogs);
-        console.log('this user has written the following blogs:');
-        this.blogs.forEach(blog=>{
-            console.log(blog.title,blog.likes);
-        });
-    }
-};
-
-
-user.login();
-user.logout();
-user.logBlogs();
-
-// Math object
-console.log(Math);
-console.log(Math.PI);
-console.log(Math.E);
-
-
-const area = 7.7;
-console.log(Math.round(area));
-console.log(Math.floor(area));
-console.log(Math.ceil(area));
-console.log(Math.trunc(area));
-
-
-// random numbers
-const random = Math.random();
-console.log(random);
-console.log(Math.round(random*100000));
-
-// Primitive values
-let scoreOne = 50;
-let scoreTwo = scoreOne;
-
-
-console.log(`scoreOne:${scoreOne}`,`scoreTwo: ${scoreTwo}`);
-
-
-scoreOne = 100;
-console.log(`scoreOne:${scoreOne}`,`scoreTwo: ${scoreTwo}`);
-
-
-// Reference values
-const userOne = {name:'ryu',age:30};
-userTwo = userOne;
-console.log(userOne,userTwo);
-userOne.name='chun-li';
-console.log(userOne,userTwo);
-
+const title = document.querySelector('.title');
+title.classList.toggle('test');//to add class
+title.classList.toggle('test');//to remove class
